@@ -1,23 +1,36 @@
-**Shared Task on "Foodborne Disease Outbreak and Recall Event Extraction from News" A multi-class classification task
-**
 
-**Background: **
+<h3 align="center">Shared Task on "Detection and Extraction of Food Recalls and Foodborne Disease Outbreaks in Online News Articles"</h3>
+
+
+## Background
+
 Foodborne diseases and food recalls are major public health concerns, with outbreaks causing significant illness, and recalls aiming to prevent further harm to consumers. This shared task focuses on the development of automated systems for detecting foodborne disease outbreaks and recall events from news articles, particularly those in the form of FDA press releases.
 
 
-Objective:
-The task will allow researchers and practitioners to explore the capabilities of NLP in real-world, unstructured data extraction, specifically aimed at improving public health responses and consumer safety. Participants will be tasked with addressing two sub-tasks:
-Task-1 (A multi-class classification task): Participants will build a model that classifies news articles into one of three categories: (1) Food Recall, (2) Foodborne Disease Outbreak, or (3) Neither.
-Task-2 (Entity and Event Extraction): Participants will develop a system that extracts key entities and events from text, including:
-Target Organization (e.g., company or regulatory body)
-Product Name (e.g., food item being recalled or related to an outbreak)
-Infection Name (e.g., the disease responsible for the outbreak)
-Safety Incident (e.g., contamination or allergic reaction)
-Number of People Affected (e.g., how many individuals have been reported affected by the recall or outbreak)
 
-Data:
-The dataset will consist of English-language news articles, press releases, and other publicly available documents related to foodborne diseases and recalls. The articles will be sourced from a combination of FDA press releases, news websites, and scientific publications. These documents have been annotated to highlight relevant events, entities, and categories.
+### Task Description
 
-Evaluation Metrics:
-Task-1 (Classification): Accuracy: The proportion of correctly classified sentences out of the total number of sentences; Precision, Recall, and F1-score: Calculated for each of the three categories (Recall, Outbreak, Neither).
-Task-2 (Entity and Event Extraction): Precision, Recall, and F1-score: For each type of entity (e.g., Product Name, Target Organization, Infection Name, etc.), as well as for the overall event extraction (including the relations between entities); Exact Match: An evaluation based on the percentage of correctly extracted entities and events, with the exact match between the predicted and true entities being counted.
+This shared task consists of two subtasks. Given a news article:
+
+* Subtask-1:(A multi-class classification task):
+Participants will build a model that classifies the news article into one of three categories: (1) Food Recall, (2) Foodborne Disease Outbreak, or (3) Neither.
+
+* Subtask-2 (Entity and Event Extraction): Participants will develop a system that extracts key entities and events from the article, including:
+
+	* Target Organization (e.g., company or regulatory body involved in the incident or whose product has been recalled)
+	* Product Name (e.g., food item being recalled or related to an outbreak)
+	* Cause of Incident (e.g., primary cause of the food safety incident)
+	* Disease Caused (e.g., diseases or health conditions caused by the incident)
+	* Number of People Affected (e.g., how many individuals have been reported affected by the recall or outbreak)
+	* Location (e.g., geographical location where the incident took place)
+
+### Dataset
+
+The dataset will consist of English-language news articles, press releases, and other publicly available documents related to foodborne diseases and recalls. The articles will be sourced from a combination of FDA press releases, news websites, and scientific publications. The training, development, and test sets contain 3,172 news articles, 357 news articles, and 1,005 news articles, respectively. The data is provided in XLSX format. Each article includes an ID, article categories (label for Subtask-1), and six entities mentioned in the article (for Subtask-2), as shown below. If any of the entities are not mentioned in the article, "N/A" is used in place of the entity.
+
+### Evaluation Metrics:
+
+* Subtask-1 (Multiclass Classification): Submissions will be ranked based on the Accuracy, weighted average Precision, Recall, and F1-score.
+* Subtask-2 (Entity Extraction): Evaluation will be based on the percentage of correctly extracted entities for each entity type (e.g., Organization, Product, Cause, Disease, Number of People Affected, Location), as well as the overall accuracy of event extraction.
+
+For further details see [Codalab] (https://codalab.lisn.upsaclay.fr/competitions/22154) competition page.
